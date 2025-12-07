@@ -9,8 +9,10 @@ const Profile = () => {
     const [ profile, setProfile ] = useState(null)
     const [ videos, setVideos ] = useState([])
 
+    const API = import.meta.env.VITE_BaseUrl;
+
     useEffect(() => {
-        axios.get(`http://localhost:3000/api/food-partner/${id}`, { withCredentials: true })
+        axios.get(`${API}/food-partner/${id}`, { withCredentials: true })
             .then(response => {
                 setProfile(response.data.foodPartner)
                 setVideos(response.data.foodPartner.foodItems)
@@ -37,13 +39,15 @@ const Profile = () => {
 
                 <div className="profile-stats" role="list" aria-label="Stats">
                     <div className="profile-stat" role="listitem">
-                        <span className="profile-stat-label">total meals</span>
-                        <span className="profile-stat-value">{profile?.totalMeals}</span>
+                        <span className="profile-stat-label">Total Meals</span>
+                        {/* <span className="profile-stat-value">{profile?.totalMeals}</span> */}
+                        <span className="profile-stat-value">{videos.length}</span>
+
                     </div>
-                    <div className="profile-stat" role="listitem">
+                    {/* <div className="profile-stat" role="listitem">
                         <span className="profile-stat-label">customer served</span>
                         <span className="profile-stat-value">{profile?.customersServed}</span>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
@@ -51,7 +55,7 @@ const Profile = () => {
 
             <section className="profile-grid" aria-label="Videos">
                 {videos.map((v) => (
-                    <div key={v.id} className="profile-grid-item">
+                    <div key={v._id} className="profile-grid-item">
                         {/* Placeholder tile; replace with <video> or <img> as needed */}
 
 
