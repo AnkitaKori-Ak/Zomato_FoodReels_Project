@@ -43,7 +43,7 @@ Install Dependencies
 
 Backend:
 
-*cd backend
+* cd backend
 
 * npm install
 
