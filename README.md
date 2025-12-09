@@ -30,6 +30,7 @@ Tech Stack
 | Version Control | Git & GitHub                        |
 
 System Architecture
+
 Three main entities are implemented:
 
 | Entity       | Description                                 |
