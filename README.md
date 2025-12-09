@@ -40,6 +40,7 @@ Three main entities are implemented:
 | Food         | Food items displayed by food partners       |
 
 Install Dependencies
+
 Backend:
 
 cd backend
